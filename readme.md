@@ -123,10 +123,6 @@ it with sensitive information.
 - Conversation export
 - Unit and integration tests
 
-## Author
-
-Manoj MD
-
 ## License
 
 MIT License
