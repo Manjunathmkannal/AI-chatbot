@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Nova AI | Smart Chat Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">N</div>
+
+                <div>
+                    <h2>Nova AI</h2>
+                    <p>Your AI companion</p>
+                </div>
+            </div>
+
+            <button id="new-chat-btn" class="new-chat-btn">
+                <span>＋</span> New Conversation
+            </button>
+
+            <div class="sidebar-section">
+                <p class="section-label">ABOUT NOVA</p>
+
+                <div class="feature-item">
+                    <span>✦</span>
+                    <div>
+                        <h4>Smart Answers</h4>
+                        <p>Get helpful explanations</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span>⌘</span>
+                    <div>
+                        <h4>Code Assistant</h4>
+                        <p>Learn programming</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span>◈</span>
+                    <div>
+                        <h4>Private & Local</h4>
+                        <p>Powered by local Ollama</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="status-dot"></div>
+                <span>Local AI Assistant</span>
+            </div>
+
+        </aside>
+
+
+        <!-- Main chat area -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <h3>AI Assistant</h3>
+                    <p>Ask anything. Learn something new.</p>
+                </div>
+
+                <div class="model-badge">
+                    <span class="status-dot"></span>
+                    Llama 3
+                </div>
+
+            </header>
+
+
+            <!-- Messages -->
+            <section id="chat-container" class="chat-container">
+
+                <div id="welcome-screen" class="welcome-screen">
+
+                    <div class="welcome-icon">✦</div>
+
+                    <h1>Hey there! 👋</h1>
+
+                    <h2>I'm Nova, your AI assistant.</h2>
+
+                    <p>
+                        Ask me questions, explore ideas, or get help
+                        with your next coding project.
+                    </p>
+
+                    <div class="suggestion-grid">
+
+                        <button class="suggestion-card"
+                                data-prompt="Explain Python in simple words.">
+                            <span>🐍</span>
+                            <strong>Learn Python</strong>
+                            <small>Understand programming basics</small>
+                        </button>
+
+                        <button class="suggestion-card"
+                                data-prompt="What is artificial intelligence?">
+                            <span>🧠</span>
+                            <strong>Explore AI</strong>
+                            <small>Discover how AI works</small>
+                        </button>
+
+                        <button class="suggestion-card"
+                                data-prompt="Give me a beginner-friendly Python project idea.">
+                            <span>💡</span>
+                            <strong>Get Ideas</strong>
+                            <small>Find your next project</small>
+                        </button>
+
+                        <button class="suggestion-card"
+                                data-prompt="Give me five useful Python coding interview questions.">
+                            <span>💻</span>
+                            <strong>Practice Coding</strong>
+                            <small>Prepare for interviews</small>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div id="messages" class="messages"></div>
+
+                <div id="typing-indicator"
+                     class="typing-indicator hidden">
+
+                    <div class="avatar bot-avatar">N</div>
+
+                    <div class="typing-bubble">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <small>Nova is thinking...</small>
+
+                </div>
+
+            </section>
+
+
+            <!-- Message input -->
+            <footer class="input-area">
+
+                <form id="chat-form" class="input-wrapper">
+
+                    <textarea
+                        id="message-input"
+                        placeholder="Message Nova..."
+                        rows="1"
+                        maxlength="4000"
+                        required
+                    ></textarea>
+
+                    <button type="submit"
+                            id="send-btn"
+                            aria-label="Send message">
+                        ↑
+                    </button>
+
+                </form>
+
+                <div class="input-footer">
+                    <span>Powered by Ollama + Llama 3</span>
+                    <span>Enter to send · Shift + Enter for new line</span>
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
